@@ -7,14 +7,13 @@ public class Client {
 
     private int id;
     private String name;
-
-    @Autowired
-    @Qualifier("fileEventLogger")
     private EventLogger eventLogger;
 
-    public Client(int id, String name) {
+    @Autowired
+    public Client(int id, String name, EventLogger eventLogger) {
         this.id = id;
         this.name = name;
+        this.eventLogger = eventLogger;
     }
 
     public void logMessage() {

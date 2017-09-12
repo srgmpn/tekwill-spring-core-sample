@@ -11,8 +11,13 @@ public class App {
         AbstractApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 //        EventLogger eventLogger = new ConsoleEventLogger();
 //        Client client = new Client(1, "Sergiu", eventLogger);
-        Client client = (Client) context.getBean("client");
-        client.logMessage();
+        Client clientSergiu = (Client) context.getBean("clientSergiu");
+        clientSergiu.logMessage();
+
+        Client clientJohn = (Client) context.getBean("clientJohn");
+        clientJohn.logMessage();
+
+
         context.close();
     }
 }
